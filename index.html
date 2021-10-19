@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강예리 포트폴리오</title>
+    <link rel="shortcut icon" href="img/logo_black2_lSh_icon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colorbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+    <script>
+        $(function(){
+            //오픈시 무조건 화면 위치를 맨 위로 가져간다.
+//            $("body, html").stop().animate({"scrollTop":0}, 500);
+            var size = $('body').width();
+
+            if (size > 1390) {
+                $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:760});
+            } else if (850 < size && size <= 1389){
+                $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:560});
+            } else if (500 < size && size <= 849){                               
+                $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:456});
+            } else if (size <= 500){  
+                console.log("aaaa");
+                $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:300});
+            };
+
+            $(window).resize(function(){
+                var size = $('body').width();
+                
+                if (size > 1390) {
+                    $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:760});
+                } else if (850 < size && size <= 1389){
+                    $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:560});
+                } else if (500 < size && size <= 849){                               
+                    $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:456});
+                } else if (size <= 500){                               
+                    $(".portfolio_btn").colorbox({iframe:true, innerWidth:'80%', innerHeight:300});
+                };
+            });
+            //현재 스크롤 위치를 찾아서 메뉴 색깔을 바꿔준다.
+            $(window).scroll(function(){
+                var ht = $(window).height() -10;
+                var scroll = $(window).scrollTop();
+
+                if(scroll>=ht*0 && scroll<ht*1){
+                    $("#navTop_box #topMenu li a").removeClass();
+                    $("#navTop_box #topMenu li").eq(0).find('a').addClass("active");
+                }
+                if(scroll>=ht*1 && scroll<ht*2){
+                    $("#navTop_box #topMenu li a").removeClass();
+                    $("#navTop_box #topMenu li").eq(1).find('a').addClass("active");
+                }
+                if(scroll>=ht*2 && scroll<ht*3){
+                    $("#navTop_box #topMenu li a").removeClass();
+                    $("#navTop_box #topMenu li").eq(2).find('a').addClass("active");
+                }
+                if(scroll>=ht*3 && scroll<ht*4){
+                    $("#navTop_box #topMenu li a").removeClass();
+                    $("#navTop_box #topMenu li").eq(3).find('a').addClass("active");
+                }
+            });
+        });
+        $(function(){
+            let current = 0;
+            let banner = $(".slide");
+            let id = banner.length;
+            
+            $(".right_arrow").click(function(){
+                let prev = banner.eq(current);
+                move(prev, 0, '-100%');
+                
+                current++;
+                if(current == id){
+                    current=0;
+                }
+                let next = banner.eq(current);
+                move(next, '100%', 0);
+                
+            });
+            $(".left_arrow").click(function(){
+
+                let prev = banner.eq(current);
+                move(prev, 0, '100%');
+                
+                current--;
+                if(current < 0){
+                    current=id-1;
+                }
+                let next = banner.eq(current);
+                move(next, '-100%', 0);
+            });
+            
+            function move(tg, start, end){
+                tg.css('left', start)
+                .stop()
+                .animate({left:end}, 1000);
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- 메뉴 -->
+    <nav id="navTop">
+        <div id="navTop_box">
+            <div id="logo" class="clear">
+               <div><img src="img/logo02_02.jpg" alt="logo"></div>
+               <span>강예리 / Kang Yeri</span>
+            </div>       
+            <ul id="topMenu" class="clear">
+                <li><a href="#first" class="active">Home</a></li>
+                <li><a href="#second">프로파일</a></li>
+                <li><a href="#third">포트폴리오</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--첫페이지-->
+    <div class="section s0" id="first">
+        <div class="section_home">
+            <h1>PORTFOLIO</h1>
+        </div>
+    </div>
+    <!-- 프로파일 영역 -->
+    <div class="section s1" id="second">
+        <div class="pr_container clear">
+            <div class="pr_profile">
+                <div>
+                    <img src="img/sample.jpg" alt="증명사진" width=250>
+                </div>
+                <ul>
+                    <li>강예리</li>
+                    <li><i class="fas fa-user"></i>영상관련 직종(지원직종)</li>
+                    <li><i class="fas fa-calendar-week"></i>1999.04.17 (만22세)</li>
+                    <li><i class="fas fa-map-marker-alt"></i>서울 논현동 거주</li>
+                </ul>
+            </div>
+            <div class="right_box">
+                <div class=pr_box_edu_title>
+                    <div class="pr_box edu_title clear">
+                        <h3 class="pr_title edu_title">EDUCATION</h3>
+                        <div class="pr_date edu_date">2021.05.26 ~ 2021.10.26</div>
+                        <div class="pr_txt edu_txt">
+                            <div>영상편집, 모션그래픽</div>
+                            <ul>
+                                <li>- 교육기관 : 방송정보국제교육원</li>
+                                <li>- 교육기간 : 2021.05.26 ~ 2021.10.26</li>
+                                <li>- 교육내용 : 영상편집 및 모션그래픽</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pr_box cer_box">
+                    <h3 class="pr_title cet_title">LICENSE</h3>
+                    <div class="pr_date cet_date">
+                        <div>2018.11</div>
+                        <div>2017.03</div>
+                    </div>
+                    <div class="pr_txt cet_txt">
+                        <div>컴퓨터활용능력 2급</div>
+                        <div>GTQ 포토샵 1급</div>
+                    </div>
+                </div>
+                <div class="ct_box">
+                    <div class="ct_inbox">
+                        <div class="ct_title">
+                            <h3>CONTACT</h3>
+                        </div>
+                        <div class="ct_txt">
+                            <ul>
+                                <li><img src="img/con_phone.png" alt="phone"></li>
+                                <li>010-8344-2200</li>
+                            </ul>
+                            <ul>
+                                <li><img src="img/con_email.png" alt="email"></li>
+                                <li>zyxjjkopl@naver.com</li>
+                            </ul>
+                            <ul>
+                                <li><img src="img/con_kakao.png" alt="sns"></li>
+                                <li>ID : gry123</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--end 프로파일 영역-->
+    
+    <!-- 포트폴리오 영역 -->
+    <div class="section s2" id="third">
+        <div class="slide_wrap">
+            <!-- 첫번째 영상 -->
+            <div class="slide" style="left:0">
+                <div class="image">
+                    <img src="img/0.jpg" alt="영상사진">
+                </div>
+                <div class="pf_txt_container">
+                    <h3 class="pf_title">영상제목1</h3>
+                    <table>
+                        <tr>
+                            <td class="pf_name">프로젝트 명 : </td>
+                            <td class="pf_txt">테스트 프로젝트 입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="pf_name">제작소요기간 : </td>
+                            <td class="pf_txt">2021.06 2주</td>
+                        </tr>
+                        <tr>
+                            <td class="pf_name">설명 : </td>
+                            <td class="pf_txt">영상에 대한 설명</td>
+                        </tr>
+                    </table>
+                    <div class="pf_gosite">
+                        <a href="https://www.youtube.com/embed/kpmitLje-TU" class="portfolio_btn">▶PLAY</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 두번째 영상 -->
+            <div class="slide">
+                <div class="image">
+                    <img src="img/0.jpg" alt="영상사진">
+                </div>
+                <div class="pf_txt_container">
+                    <h3 class="pf_title">영상제목2</h3>
+                    <table>
+                        <tr>
+                            <td class="pf_name">프로젝트 명 : </td>
+                            <td class="pf_txt">테스트 프로젝트 입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="pf_name">제작소요기간 : </td>
+                            <td class="pf_txt">2021.06 2주</td>
+                        </tr>
+                        <tr>
+                            <td class="pf_name">설명 : </td>
+                            <td class="pf_txt">영상에 대한 설명</td>
+                        </tr>
+                    </table>
+                    <div class="pf_gosite">
+                        <a href="https://www.youtube.com/embed/kpmitLje-TU" class="portfolio_btn">▶PLAY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 세번째 영상 -->
+        <div class="slide">
+            <div class="image">
+                <img src="img/0.jpg" alt="영상사진">
+            </div>
+            <div class="pf_txt_container">
+                <h3 class="pf_title">영상제목3</h3>
+                <table>
+                    <tr>
+                        <td class="pf_name">프로젝트 명 : </td>
+                        <td class="pf_txt">테스트 프로젝트 입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="pf_name">제작소요기간 : </td>
+                        <td class="pf_txt">2021.06 2주</td>
+                    </tr>
+                    <tr>
+                        <td class="pf_name">설명 : </td>
+                        <td class="pf_txt">영상에 대한 설명 내용입니다.</td>
+                    </tr>
+                </table>
+                <div class="pf_gosite">
+                    <a href="https://www.youtube.com/embed/kpmitLje-TU" class="portfolio_btn">▶PLAY</a>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <img src="img/left_btn.png" alt="left" class="left_arrow">
+                <img src="img/right_btn.png" alt="right" class="right_arrow">
+            </div>
+        </div>
+    </div> <!--포트폴리오 영역-->
+</body>
+</html>
