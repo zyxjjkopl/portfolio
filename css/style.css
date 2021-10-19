@@ -61,7 +61,7 @@ html {
 /* s1 프로파일 */
 /* profile */
 .s1 {
-    background-color: lightgreen;
+    background-color: white;
 }
 .pr_container {
     display: flex; width: 80%; margin: auto;
@@ -74,13 +74,16 @@ html {
 }
 .pr_profile>ul {
     margin-top: 20px;
-    border-left: 7px solid pink;
+    border-left: 7px solid #f5df4d;
 }
 .pr_profile>ul>li {
     padding-left: 30px; line-height: 30px;
 }
 .pr_profile>ul>li>i {
     margin-right: 10px;
+}
+.pr_profile>ul>li {
+    font-weight: bold;
 }
 /* right box */
 .right_box {
@@ -90,7 +93,7 @@ html {
     justify-content: space-between;
 }
 .pr_title {
-    border-left: 3px solid pink;
+    border-left: 3px solid #f5df4d;
     padding-left: 10px;
 }
 .pr_date {
@@ -98,6 +101,11 @@ html {
     padding-top: 20px; padding-left: 10px;
 }
 .pr_txt {
+    line-height: 1.5;
+    float:left;
+    padding-top: 20px; padding-left: 10px;
+}
+.pr_txt01 {
     line-height: 1.5;
     float:left;
     padding-top: 20px; padding-left: 10px;
@@ -129,9 +137,9 @@ html {
 }
 /* contact */
 .ct_inbox {
-    padding: 20px; background: #eee;
-    border: 5px double#ccc;
-    margin-top: 100px;
+    padding: 3px; background: white;
+    border: 5px double #f5df4d;
+    margin-top: 20px;
 }
 .ct_title {
     text-align: center;
@@ -139,15 +147,15 @@ html {
 .ct_txt {
     display: flex;
     width: 90%; margin: auto;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .ct_txt>ul {
     flex: 1;
     text-align: center;
-    line-height: 50px;
+    line-height: 30px;
 }
 .ct_txt>ul>li>img {
-    width: 50px; height: 50px;
+    width: 30px; height: 25px;
 }
 /* s2포트폴리오 영역 */
 .s2 {
