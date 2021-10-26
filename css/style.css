@@ -82,9 +82,6 @@ html {
 .pr_profile>ul>li>i {
     margin-right: 10px;
 }
-.pr_profile>ul>li {
-    font-weight: bold;
-}
 /* right box */
 .right_box {
     flex: 2;
@@ -159,7 +156,7 @@ html {
 }
 /* s2포트폴리오 영역 */
 .s2 {
-    background-color: lightyellow;
+    background-color: white;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -228,11 +225,11 @@ html {
     transition: 0.5s;
 }
 .pf_gosite a:hover {
-    color: #fff; border: 1px solid pink;  
+    color: #fff; border: 1px solid #f5df4d;  
 }
 .pf_gosite a:before {
     content: ""; z-index: -1;
-    position: absolute; background: pink;
+    position: absolute; background: #f5df4d;
     transition: 1s;
     left: 50%; top: 0;
     transform: translateX(-50%);
